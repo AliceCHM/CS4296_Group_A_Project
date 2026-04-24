@@ -103,7 +103,6 @@ class Benchmark:
             else:
                 errors += 1
             
-            # Progress indicator
             if (i+1) % 20 == 0:
                 print(f"  Progress: {i+1}/{n} requests completed")
         
@@ -127,7 +126,7 @@ class Benchmark:
             })
             print(f"\n  Results: {avg_ms:.2f} ms avg, {req_per_sec:.2f} req/sec, {errors} errors")
     
-    # TESTS 3-5: CONCURRENCY & LOAD
+    # TESTS 3-5: CONCURRENCY
     async def fetch_concurrent(self, session, url):
         try:
             start = time.perf_counter()
@@ -159,7 +158,7 @@ class Benchmark:
     
     def test_concurrency(self, name, url):
         print(f"\n{'='*60}")
-        print(f"TESTS 3-5: CONCURRENCY & LOAD - {name}")
+        print(f"TESTS 3-5: CONCURRENCY - {name}")
         print(f"{'='*60}")
         
         test_configs = [
